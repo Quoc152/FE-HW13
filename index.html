@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div class="w-full h-screen flex flex-col justify-center items-center gap-8 bg-slate-300 p-2">
+        <div class="w-11/12 sm:w-8/12 md:6/12 lg:w-4/12 xl:w-3/12  bg-white rounded-[15px] p-5">
+            <header class="p-1">
+                <h3 class="text-2xl font-bold text-center">Thông tin sinh viên</h3>
+            </header>
+            <hr class="m-5">
+            <form id="studentForm" class="flex flex-col justify-start gap-4" action="">
+                <div>
+                    <label class="font-bold" for="ten">Tên:</label><br>
+                    <input class="w-full bg-gray-100 rounded-md p-1" type="text" id="ten" name="ten" required><br>
+                </div>
+                <div>
+                    <label class="font-bold" for="mssv">MSSV:</label><br>
+                    <input class="w-full bg-gray-100 rounded-md p-1" type="text" id="mssv" name="mssv" required><br>
+                </div>
+                <div>
+                    <label class="font-bold" for="email">Email:</label><br>
+                    <input class="w-full bg-gray-100 rounded-md p-1" type="email" id="email" name="email" required><br>
+                </div>
+                <div>
+                    <label class="font-bold" for="khoa">Khoa:</label>
+                    <select name="khoa" id="khoa" class="w-full bg-gray-100 rounded-md p-1">
+                        <option value="CNTT" selected>CNTT</option>
+                        <option value="Fast">Fast</option>
+                        <option value="Cơ khí">Cơ khí</option>
+                        <option value="Cơ khí giao thông">Cơ khí giao thông</option>
+                        <option value="Hóa">Hóa</option>
+                        <option value="Môi trường">Môi trường</option>
+                        <option value="Kiến trúc">Kiến trúc</option>
+                        <option value="Xây dựng">Xây dựng</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-bold" for="gioitinh">Giới tính:</label>
+                    <select name="gioitinh" id="gioitinh" class="w-full bg-gray-100 rounded-md p-1">
+                        <option value="Nam" selected>Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-bold" for="ngaysinh">Ngày sinh:</label>
+                    <input type="date" id="ngaysinh" name="ngaysinh" class="w-full bg-gray-100 rounded-md p-1" required>
+                </div>
+                <div class="flex flex-col justify-center items-center p-1">
+                    <button
+                        class="w-[110.50px] h-[35px] px-2 rounded-xl bg-teal-300 text-white  hover:bg-teal-200 active:bg-teal-400"
+                         type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="w-full md:w-11/12 h-[400px] bg-white rounded-[15px] p-5">
+            <div class="text-2xl font-bold text-center mb-4">Danh sách sinh viên</div>
+            <hr>
+            <table class="w-full overflow-scroll">
+                <thead>
+                    <tr class="m-3">
+                        <th class="w-3/12 text-left text-slate-400 font-bold">TÊN</th>
+                        <th class="text-left text-slate-400 font-bold">MSSV</th>
+                        <th class="text-left text-slate-400 font-bold">EMAIL</th>
+                        <th class="text-left text-slate-400 font-bold">KHOA</th>
+                        <th class="text-left text-slate-400 font-bold">GIỚI TÍNH</th>
+                        <th class="text-left text-slate-400 font-bold">NGÀY SINH</th>
+                        <th class="w-1/12 text-center"></th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
